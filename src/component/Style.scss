@@ -75,26 +75,29 @@ $special-Color: #4c5eff;
 // main container
 .General {
   @include flexDisplay(space-between, center, row);
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 100%;
   max-width: 2000px;
   max-height: 1500px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 10px;
   position: relative;
 
   //   RIGHT SIDE OF THE SCREEN ON LARGE SCREEN AND SIDE SLIDE ON SMALL SCREEN
   .RightSide {
-    position: absolute;
-    width: 100%;
-    top: 5px;
+    // position: absolute;
+    // width: 100%;
+    // top: 5px;
     border-radius: 5px;
     background-color: black;
     box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
     border: 1px solid rgba(65, 105, 225, 0.255);
-    height: 98%;
+    // height: 98%;
     overflow-y: scroll;
+
+    // border: 1px solid blue;
+    // display: none;
+
     @include responsive(bigphone) {
       position: relative;
       width: 30%;
@@ -103,11 +106,12 @@ $special-Color: #4c5eff;
       height: 97vh;
       margin: 10px;
       background-color: ($Sides);
+      display: block;
     }
 
     // right component
     .right-side-container {
-      // qborder: 2px solid red;
+      // border: 2px solid red;
       width: 100%;
       height: 100%;
       padding: 10px;
@@ -117,7 +121,6 @@ $special-Color: #4c5eff;
 
       //   top section
       .top-details {
-        // border: 2px solid red;
         @include flexDisplay(center, center, column);
         width: 100%;
         margin: 0 auto;
@@ -126,6 +129,7 @@ $special-Color: #4c5eff;
         background-color: rgba(13, 21, 34, 0.694);
         box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
         border: 1px solid rgba(65, 105, 225, 0.255);
+
         @include responsive(bigphone) {
         }
 
@@ -136,8 +140,6 @@ $special-Color: #4c5eff;
           border-radius: 50%;
           background-color: rgba(255, 255, 255, 0.772);
           border: 2px solid rgb(238, 123, 7);
-          @include responsive(bigphone) {
-          }
 
           img {
             width: 100%;
@@ -272,9 +274,13 @@ $special-Color: #4c5eff;
     }
   }
 
-  //   LEFT SIDE OF THE SCREEN ON LARGE SCREEN AND SIDE SLIDE ON SMALL SCREEN
+  //   MIDDLE SIDE OF THE SCREEN ON LARGE SCREEN AND SIDE SLIDE ON SMALL SCREEN
   .LeftSide {
     // border: 1px solid red;
+    width: 100%;
+    height: 97vh;
+    background-color: ($Sides);
+    overflow-y: scroll;
     @include responsive(bigphone) {
       width: 100%;
       height: 97vh;
@@ -295,7 +301,7 @@ $special-Color: #4c5eff;
         @include flexDisplay(space-between, center, row);
         box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
         border: 2px solid rgba(65, 105, 225, 0.255);
-
+        height: 110px;
         @include responsive(bigphone) {
           height: 60px;
         }
@@ -333,7 +339,7 @@ $special-Color: #4c5eff;
             opacity: 0.7;
             width: 100%;
             height: 100%;
-
+            // display: none;
             // for big tablets and above
             @include responsive(tablet) {
               width: 100%;
@@ -347,7 +353,7 @@ $special-Color: #4c5eff;
 
       // about me
       .about-me {
-        border: 2px solid red;
+        // border: 2px solid red;
         width: 100%;
         @include flexDisplay(space-between, center, column);
         // background-color: rgba(13, 21, 34, 0.696);
@@ -355,7 +361,7 @@ $special-Color: #4c5eff;
         border: 1px solid rgba(65, 105, 225, 0.255);
         margin-top: 10px;
         position: relative;
-        display: flex;
+        // display: flex;
 
         .about-me-name {
           // margin-top: 5px;
@@ -384,18 +390,85 @@ $special-Color: #4c5eff;
             padding: 20px;
           }
         }
-        // client logo container
-        .client-logo-container {
-          @include flexDisplay(space-between, center, row);
-          // border: 2px solid red;
-          padding: 0 10px;
-          width: 100%;
-          overflow-x: scroll;
-          .client-logo {
-            // border: 2px solid red;
-            margin: 10px;
-            img {
-              width: 200px;
+      }
+      //  ServicesGrid
+      .services-container {
+        width: 100%;
+        @include flexDisplay(space-between, center, column);
+        // background-color: rgba(13, 21, 34, 0.696);
+        // box-shadow: 5px 5px 15px rgba(65, 105, 225, 0.089);
+        border: 1px solid rgba(65, 105, 225, 0.255);
+        margin-top: 10px;
+        padding: 10px;
+        position: relative;
+        // border: 1px solid red;
+
+        h2 {
+          // margin-top: 5px;
+          width: 98%;
+          padding: 10px;
+
+          @include flexDisplay(space-between, center, column);
+          color: rgba(238, 122, 7, 0.878);
+        }
+
+        .services-inside-container {
+          // border: 1px solid red;
+          margin-top: 10px;
+
+          @include flexDisplay(space-between, center, column);
+          .services-dynamic-btn {
+            @include flexDisplay(space-between, center, row);
+            // border: 1px solid red;
+            width: 80%;
+            max-width: 900px;
+
+            button {
+              width: 100%;
+              padding: 10px;
+              font-size: larger;
+              text-transform: uppercase;
+              background-color: rgba(30, 4, 4, 0);
+              color: rgba(150, 171, 217, 0.673);
+              border: none;
+              transition: 0.3s linear;
+
+              &:hover {
+                border-bottom: 2px solid rgba(150, 171, 217, 0.673);
+              }
+            }
+          }
+          .services-grid-con {
+            // border: 1px solid red;
+            margin-top: 50px;
+            width: 85%;
+            // max-width: 900px;
+            @include flexDisplay(space-around, center, row);
+            display: flex;
+            flex-wrap: wrap;
+
+            .services-grid {
+              // width: 49%;
+              width: 32%;
+              min-width: 250px;
+              // background-color: rgba(150, 171, 217, 0.673);
+              color: rgba(150, 171, 217, 0.673);
+              // border: 2px solid rgba(150, 171, 217, 0.673);
+              // box-shadow: 5px 5px 15px rgba(65, 105, 225, 0.089);
+              height: 200px;
+              overflow-y: scroll;
+              margin: 1px;
+              padding: 25px 10px;
+              border-radius: 5px;
+              background-color: rgba(13, 21, 34, 0.694);
+              box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
+              border: 2px solid rgba(65, 105, 225, 0.255);
+
+              p {
+                font-size: 13px;
+                margin-top: 15px;
+                line-height: 15px;
+              }
             }
           }
         }
@@ -414,7 +487,14 @@ $special-Color: #4c5eff;
     border: 1px solid rgba(65, 105, 225, 0.255);
 
     // border: 2px solid red;
-
+    position: relative;
+    width: 10%;
+    max-width: 60px;
+    height: 97vh;
+    max-height: 97vh;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: ($Sides);
     @include responsive(bigphone) {
       position: relative;
       width: 10%;
@@ -427,6 +507,9 @@ $special-Color: #4c5eff;
     }
 
     .side-menu {
+      margin-top: 30px;
+      font-size: 30px;
+      height: 300px;
       //  margin-top: 20px;
       font-size: 30px;
       // height: 400px;

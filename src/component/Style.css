@@ -29,24 +29,18 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  border: 1px solid blue;
   width: 100%;
   max-width: 2000px;
   max-height: 1500px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 10px;
   position: relative;
 }
 .General .RightSide {
-  position: absolute;
-  width: 100%;
-  top: 5px;
   border-radius: 5px;
   background-color: black;
   box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
   border: 1px solid rgba(65, 105, 225, 0.255);
-  height: 98%;
   overflow-y: scroll;
 }
 @media only screen and (min-width: 750px) {
@@ -58,6 +52,7 @@ body {
     height: 97vh;
     margin: 10px;
     background-color: rgba(18, 29, 47, 0.694);
+    display: block;
   }
 }
 .General .RightSide .right-side-container {
@@ -218,6 +213,12 @@ body {
   background-color: rgba(150, 171, 217, 0.673);
   color: black;
 }
+.General .LeftSide {
+  width: 100%;
+  height: 97vh;
+  background-color: rgba(18, 29, 47, 0.694);
+  overflow-y: scroll;
+}
 @media only screen and (min-width: 750px) {
   .General .LeftSide {
     width: 100%;
@@ -239,6 +240,7 @@ body {
   flex-direction: row;
   box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
   border: 2px solid rgba(65, 105, 225, 0.255);
+  height: 110px;
 }
 @media only screen and (min-width: 750px) {
   .General .LeftSide .left-side-container .banner {
@@ -287,7 +289,6 @@ body {
   opacity: 1;
 }
 .General .LeftSide .left-side-container .about-me {
-  border: 2px solid red;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -297,7 +298,6 @@ body {
   border: 1px solid rgba(65, 105, 225, 0.255);
   margin-top: 10px;
   position: relative;
-  display: flex;
 }
 .General .LeftSide .left-side-container .about-me .about-me-name {
   width: 98%;
@@ -325,20 +325,81 @@ body {
   text-align: center;
   padding: 20px;
 }
-.General .LeftSide .left-side-container .about-me .client-logo-container {
+.General .LeftSide .left-side-container .services-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgba(65, 105, 225, 0.255);
+  margin-top: 10px;
+  padding: 10px;
+  position: relative;
+}
+.General .LeftSide .left-side-container .services-container h2 {
+  width: 98%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  color: rgba(238, 122, 7, 0.878);
+}
+.General .LeftSide .left-side-container .services-container .services-inside-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.General .LeftSide .left-side-container .services-container .services-inside-container .services-dynamic-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 0 10px;
+  width: 80%;
+  max-width: 900px;
+}
+.General .LeftSide .left-side-container .services-container .services-inside-container .services-dynamic-btn button {
   width: 100%;
-  overflow-x: scroll;
+  padding: 10px;
+  font-size: larger;
+  text-transform: uppercase;
+  background-color: rgba(30, 4, 4, 0);
+  color: rgba(150, 171, 217, 0.673);
+  border: none;
+  transition: 0.3s linear;
 }
-.General .LeftSide .left-side-container .about-me .client-logo-container .client-logo {
-  margin: 10px;
+.General .LeftSide .left-side-container .services-container .services-inside-container .services-dynamic-btn button:hover {
+  border-bottom: 2px solid rgba(150, 171, 217, 0.673);
 }
-.General .LeftSide .left-side-container .about-me .client-logo-container .client-logo img {
-  width: 200px;
+.General .LeftSide .left-side-container .services-container .services-inside-container .services-grid-con {
+  margin-top: 50px;
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+.General .LeftSide .left-side-container .services-container .services-inside-container .services-grid-con .services-grid {
+  width: 32%;
+  min-width: 250px;
+  color: rgba(150, 171, 217, 0.673);
+  height: 200px;
+  overflow-y: scroll;
+  margin: 1px;
+  padding: 25px 10px;
+  border-radius: 5px;
+  background-color: rgba(13, 21, 34, 0.694);
+  box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
+  border: 2px solid rgba(65, 105, 225, 0.255);
+}
+.General .LeftSide .left-side-container .services-container .services-inside-container .services-grid-con .services-grid p {
+  font-size: 13px;
+  margin-top: 15px;
+  line-height: 15px;
 }
 .General .SideMenu {
   position: absolute;
@@ -348,6 +409,14 @@ body {
   max-height: 60px;
   box-shadow: 4px 4px 10px rgba(65, 105, 225, 0.089);
   border: 1px solid rgba(65, 105, 225, 0.255);
+  position: relative;
+  width: 10%;
+  max-width: 60px;
+  height: 97vh;
+  max-height: 97vh;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: rgba(18, 29, 47, 0.694);
 }
 @media only screen and (min-width: 750px) {
   .General .SideMenu {
@@ -362,6 +431,9 @@ body {
   }
 }
 .General .SideMenu .side-menu {
+  margin-top: 30px;
+  font-size: 30px;
+  height: 300px;
   font-size: 30px;
   color: rgba(150, 171, 217, 0.673);
   display: flex;

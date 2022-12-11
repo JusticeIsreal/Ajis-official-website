@@ -7,20 +7,10 @@ function AboutUs() {
   return (
     <>
       <div className="about-me">
-        <h3 className="about-me-name">{`< ABOUT US : />`}</h3>
+        <h2 className="about-me-name">{`< ABOUT US : />`}</h2>
         <div className="about-me-pitch">
           <p>{yy}</p>
         </div>
-
-        {/* client logo slider */}
-        <div className="client-logo-container">
-          {ClientsData.map((client, index) => (
-            <div key={index} className="client-logo">
-              <img src={client.url} alt="" />
-            </div>
-          ))}
-        </div>
-        {/* end of client logo slide */}
       </div>
     </>
   );
